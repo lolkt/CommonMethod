@@ -1,20 +1,15 @@
 package com.plf.mail;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Date;
-import java.util.Properties;
-
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
-import javax.mail.internet.MimeUtility;
+import javax.mail.internet.*;
+import java.io.UnsupportedEncodingException;
+import java.util.Date;
+import java.util.Properties;
 
 public class MailExample {
 	private static String sendMail="";
@@ -85,7 +80,7 @@ public class MailExample {
 
         //创建文本节点
         MimeBodyPart attachment = new MimeBodyPart();
-        DataHandler dh2 = new DataHandler(new FileDataSource("E:\\简历\\Java开发.docx"));  // 读取本地文件
+        DataHandler dh2 = new DataHandler(new FileDataSource("E:\\Java开发.docx"));  // 读取本地文件
         attachment.setDataHandler(dh2);                                     // 将附件数据添加到“节点”
         attachment.setFileName(MimeUtility.encodeText(dh2.getName()));
         
