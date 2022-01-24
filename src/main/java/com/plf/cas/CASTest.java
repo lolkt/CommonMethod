@@ -27,7 +27,7 @@ public class CASTest {
         for (Thread t : ts) {
             t.start();
         }
-// 等待所有线程执行完成
+        // 等待所有线程执行完成
         for (Thread t : ts) {
             try {
                 t.join();

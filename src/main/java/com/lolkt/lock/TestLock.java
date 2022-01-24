@@ -6,7 +6,7 @@ public class TestLock {
     /**
      * 设备 ID 锁
      */
-    private com.lolkt.lock.KeyLockLock deviceLocks = com.lolkt.lock.KeyLockLock.getKeyLock();
+    private KeyLockLock deviceLocks = KeyLockLock.getKeyLock();
 
 
     public static void main(String[] args) {

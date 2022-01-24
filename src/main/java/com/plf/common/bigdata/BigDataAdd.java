@@ -1,7 +1,15 @@
 package com.plf.common.bigdata;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * input two big data:
+ * 124356773242354364576576
+ *       679867846534232543
+ * result=
+ * 124357453110200898809119
+ */
 public class BigDataAdd {
 	static int N = 100;
 	static int a[] = new int[N];
@@ -40,11 +48,15 @@ public class BigDataAdd {
 		for(int i=0;i<N;i++){
 			c[i] = a[i]+b[i];
 		}
-		
+		System.out.println("C1:"+ Arrays.toString(c));
+
 		for(int i=0;i<N;i++){
 			c[i+1] += c[i]/10;
 			c[i]=c[i]%10;
 		}
+
+
+		System.out.println("C2:"+ Arrays.toString(c));
 	}
 	
 	private void Input(){

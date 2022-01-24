@@ -38,15 +38,15 @@ public class DeepCopy implements Cloneable{
         deep.addListValue("Java");
         deep.printlnName(); 
         deep.printlnList();  
-        DeepCopy DeepCopy = deep.clone(); // 克隆
+        DeepCopy deepCopy = deep.clone(); // 克隆
         // 打印出两个对象的地址
         System.out.println(deep);
-        System.out.println(DeepCopy);
-        DeepCopy.printlnList(); 
-        DeepCopy.addListValue("Python");
-        DeepCopy.printlnList(); 
-        DeepCopy.printlnName(); 
-        DeepCopy.setName("hello");
+        System.out.println(deepCopy);
+        deepCopy.printlnList();
+        deepCopy.addListValue("Python");
+        deepCopy.printlnList();
+        deepCopy.printlnName();
+        deepCopy.setName("hello");
         deep.printlnName(); 
         deep.printlnList(); 
     }
