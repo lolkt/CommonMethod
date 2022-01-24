@@ -6,16 +6,16 @@ public class TestLock {
     /**
      * 设备 ID 锁
      */
-    private KeyLockLock deviceLocks = KeyLockLock.getKeyLock();
+    private com.lolkt.lock.KeyLockLock deviceLocks = com.lolkt.lock.KeyLockLock.getKeyLock();
 
 
     public static void main(String[] args) {
 
-
+        TestLock testLock = new TestLock();
         new Thread(new Runnable() {
             @Override
             public void run() {
-                TestLock testLock = new TestLock();
+
                 String res = testLock.saveDeviceImgLock("aa", "cc");
                 System.out.println("=="+res);
             }
@@ -25,7 +25,6 @@ public class TestLock {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                TestLock testLock = new TestLock();
                 String res2 = testLock.saveDeviceImgLock("aa", "dd");
                 System.out.println("=="+res2);
             }

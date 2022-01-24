@@ -1,4 +1,4 @@
-package com.plf.sort;
+package com.lolkt.sort;
 
 public class LinkedInsertSort {
 

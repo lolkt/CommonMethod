@@ -1,4 +1,4 @@
-package com.plf.callback;
+package com.lolkt.callback;
 
 /**
  * 使用object.wait  object.notify 实现异步转同步
@@ -7,10 +7,10 @@ public class TestRecord {
 
 
     public static void main(String[] args) {
-        DeferredResultHolder resultHolder = new DeferredResultHolder();
+       com.lolkt.callback.DeferredResultHolder resultHolder = new DeferredResultHolder();
 
         String channelId = "1";
-        ResultSync result = resultHolder.put(DeferredResultHolder.CALLBACK_CMD_RECORDINFO + channelId);
+       com.lolkt.callback.ResultSync result = resultHolder.put(com.lolkt.callback.DeferredResultHolder.CALLBACK_CMD_RECORDINFO + channelId);
 
 
         new Thread(new Runnable() {
@@ -24,7 +24,7 @@ public class TestRecord {
 
                 RequestMessage message = new RequestMessage();
                 message.setDeviceId("1");
-                message.setType(DeferredResultHolder.CALLBACK_CMD_RECORDINFO);
+                message.setType(com.lolkt.callback.DeferredResultHolder.CALLBACK_CMD_RECORDINFO);
                 message.setData(new Record("aa", 10));
 
                 resultHolder.invokeResult(message);

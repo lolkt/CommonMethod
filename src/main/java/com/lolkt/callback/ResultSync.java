@@ -1,4 +1,4 @@
-package com.plf.callback;
+package com.lolkt.callback;
 
 public class ResultSync {
     /** 请求超时时间*/

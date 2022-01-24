@@ -1,4 +1,4 @@
-package com.plf.callback;
+package com.lolkt.callback;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,16 +18,16 @@ public class DeferredResultHolder {
     public static final String CALLBACK_CMD_RECORDINFO = "CALLBACK_RECORDINFO";
 
 
-    private Map<String, ResultSync> mapSleep = new ConcurrentHashMap<>();
+    private Map<String,ResultSync> mapSleep = new ConcurrentHashMap<>();
 
     public ResultSync put(String key) {
-        ResultSync result = new ResultSync();
+       ResultSync result = new ResultSync();
         mapSleep.put(key, result);
         return result;
     }
 
     public void invokeResult(RequestMessage msg) {
-        ResultSync result = mapSleep.get(msg.getId());
+       ResultSync result = mapSleep.get(msg.getId());
         if (result == null) {
             return;
         }
