@@ -35,12 +35,29 @@ public class reversal {
     }
 
     /**
+     * 递归
+     * @param head
+     * @return
+     */
+    public static Node ReverseList3(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        System.out.println("1====="+head.next.data);
+        Node new_head = ReverseList3(head.next);
+        System.out.println("2====="+head.next.data);
+        head.next.next = head;
+        head.next = null;
+        return new_head;
+
+    }
+
+    /**
      * 5.4.3
      */
 
     @Test
-    public void ReverseTest1()
-    {
+    public void ReverseTest1() {
         Node node1 = new Node(1);
         Node node2 = new Node(2);
         Node node3 = new Node(3);
@@ -52,7 +69,7 @@ public class reversal {
         node3.next = node4;
         node4.next = node5;
 
-        Node newHead =  ReverseList2(node1);
+        Node newHead = ReverseList3(node1);
 
     }
 }
